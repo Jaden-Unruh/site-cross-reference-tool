@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>us.akana.tools</groupId>
+  <artifactId>site-cross-reference-tool</artifactId>
+  <version>0.0.1</version>
+  <packaging>jar</packaging>
+  <name>Site Cross Reference Tool</name>
+  <description>
+  	A tool for Akana to cross reference a location hierarchy with a list of FCA dates to see where they have to visit.
+  </description>
+  <url>https://github.com/Jaden-Unruh/site-cross-reference-tool</url>
+  <inceptionYear>2024</inceptionYear>
+  
+  <organization>
+  	<name>Akana</name>
+  	<url>https://akana.us/</url>
+  </organization>
+  <licenses>
+  	<license>
+  		<name>GPL-3.0-or-later</name>
+  		<url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
+  		<distribution>manual</distribution>
+  	</license>
+  </licenses>
+  <developers>
+  	<developer>
+  		<id>Jaden.Unruh</id>
+  		<name>Jaden Unruh</name>
+  		<email>Jaden.Unruh@akana.us</email>
+  		<organization>Akana</organization>
+  		<organizationUrl>https://akana.us/</organizationUrl>
+  		<roles>
+	  		<role>Developer</role>
+	  	</roles>
+	  	<timezone>America/Los_Angeles</timezone>
+  	</developer>
+  </developers>
+  
+  <properties>
+  	<maven.compiler.source>14</maven.compiler.source>
+  	<maven.compiler.target>14</maven.compiler.target>
+  </properties>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>org.apache.poi</groupId>
+  		<artifactId>poi</artifactId>
+  		<version>5.2.3</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.poi</groupId>
+  		<artifactId>poi-ooxml</artifactId>
+  		<version>5.2.3</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.commons</groupId>
+   		<artifactId>commons-lang3</artifactId>
+    	<version>3.14.0</version>
+  	</dependency>
+  </dependencies>
+  
+  <build>
+  	<pluginManagement>
+  		<plugins>
+  			<plugin>
+  				<groupId>org.apache.maven.plugins</groupId>
+  				<artifactId>maven-assembly-plugin</artifactId>
+  				<version>3.6.0</version>
+  				<configuration>
+  					<appendAssemblyId>false</appendAssemblyId>
+  					<archive>
+  						<manifest>
+  							<mainClass>siteCrossReferenceTool.Main</mainClass>
+  						</manifest>
+  					</archive>
+  					<descriptorRefs>
+  						<descriptorRef>jar-with-dependencies</descriptorRef>
+  					</descriptorRefs>
+  				</configuration>
+  			</plugin>
+  		</plugins>
+  	</pluginManagement>
+  </build>
+</project>
